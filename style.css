@@ -1,0 +1,30 @@
+/* XS -- Small devices -- To 566 */
+
+
+
+
+
+
+
+
+
+/* S -- Small devices -- From 567 to 767 */
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    
+
+}
+
+/* MD -- Medium devices -- From 768 to 991 */
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    
+
+}
+
+/* LG -- Large devices -- From 992 */
+
+@media screen and (min-width: 992px) {
+    
+
+}
