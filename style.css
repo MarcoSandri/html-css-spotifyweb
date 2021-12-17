@@ -1,9 +1,62 @@
-/* XS -- Small devices -- To 566 */
+/* XS -- Extra small devices -- Up to 575 */
+:root {
+    --footer: 70px;
+    --sidebar: 50px;
+}
 
 
+    /* Generali */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li a {
+    display: block;
+}
+
+    /* Parte superiore -- Sidebar e Libreria */
+.content {
+    display: flex;
+    height: calc(100vh - var(--footer));
+    flex-direction: row;
+}
+
+    /* barra a sinistra */
+aside {
+    background-color: #000;
+    width: var(--sidebar);
+}
+
+.sidebar-button {
+    padding: 5px 10px;
+}
+
+.logo-xs {
+    padding: 5px 10px;
+}
+
+    /* Libreria album */
+main {
+    background-color: #141922;
+    width: calc(100% - var(--sidebar));
+}
 
 
-
+    /* Parte inferiore -- Player */
+footer {
+    background-color: #282828;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--footer);
+}
 
 
 
