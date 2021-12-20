@@ -48,12 +48,6 @@ aside {
 
 .sidebar-top {
     height: calc(100% - 75px);
-    min-height: 300px;
-}
-
-.sidebar-bottom {
-    background-color: black;
-    height: 75px;
 }
 
 /* Logo */
@@ -86,7 +80,8 @@ aside {
 
 /* Playlist Sidebar */
 
-.playlist {
+.playlist-title,
+.playlist-list {
     display: none;
 }
 
@@ -182,6 +177,14 @@ footer {
         width: 200px;
     }
 
+    .sidebar-top {
+        height: 170px;
+    }
+
+    .playlist-title {
+        height: 80px;
+    }
+
     /* Logo */
 
     .logo-xs {
@@ -207,13 +210,14 @@ footer {
 
     /* Playlist sidebar */
 
-    .playlist {
+    .playlist-title,
+    .playlist-list {
         color:gray;
         display: block;
         padding: 15px 20px;
     }
 
-    .playlist h2 {
+    .playlist-title h2 {
         color: #fff;
         font-size: 14px;
     }
@@ -242,9 +246,14 @@ footer {
         margin-right: 5px;
     }
 
-    .playlist ul {
-        background-color: red;
+    .playlist-list {
         overflow-y: auto;
+        height: calc(100% - 80px - 170px - 75px);
+    }
+
+    .playlist-list li {
+        margin-bottom: 14px;
+        font-size: 14px;
     }
 
     /* Account Sidebar */
