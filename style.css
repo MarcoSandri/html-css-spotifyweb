@@ -1,9 +1,4 @@
 /* XS -- Extra small devices -- Up to 575 */
-:root {
-    --footer: 100px;
-    --sidebar: 50px;
-}
-
 
     /* Generali */
 * {
@@ -30,16 +25,17 @@ ul li a {
 
 
     /* Parte superiore -- Sidebar e Libreria */
-.content {
+
+main {
+    height: calc(100vh - 100px);
     display: flex;
-    height: calc(100vh - var(--footer));
     flex-direction: row;
 }
 
-    /* barra a sinistra */
+/* Barra a sinistra */
 aside {
     background-color: #000;
-    width: var(--sidebar);
+    width: 50px;
 }
 
 .sidebar-btn {
@@ -50,11 +46,13 @@ aside {
     padding: 5px 10px;
 }
 
-    /* Libreria album */
-main {
+/* Libreria album */
+
+.content {
+    width: calc(100% - 50px);
     background-color: #141922;
-    width: calc(100% - var(--sidebar));
     overflow-y: scroll;
+    
 }
 
 .cta {
@@ -83,7 +81,7 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    height: var(--footer);
+    height: 100px;
 }
 
 
@@ -93,13 +91,28 @@ footer {
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
     
+    aside {
+        background-color: #000;
+        width: 150px;
+    }
 
+    .content {
+        width: calc(100% - 150px);
+    }
 }
 
 /* MD -- Medium devices -- From 768 to 991 */
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    
+
+    aside {
+        background-color: #000;
+        width: 150px;
+    }
+
+    .content {
+        width: calc(100% - 150px);
+    }
 
 }
 
@@ -107,5 +120,12 @@ footer {
 
 @media screen and (min-width: 992px) {
     
+    aside {
+        background-color: #000;
+        width: 150px;
+    }
 
+    .content {
+        width: calc(100% - 150px);
+    }
 }
