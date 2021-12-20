@@ -135,6 +135,7 @@ aside {
     
 }
 
+    /* Call to action */
 .cta {
     position: sticky;
     top: 0;
@@ -154,7 +155,79 @@ aside {
     border-radius: 999px;
 }
 
-    /* Parte inferiore -- Player */
+
+    /* Menu della libreria */
+.library-menu {
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.library-menu li {
+    padding: 2px 10px;
+    margin: 8px 0;
+}
+
+.library-menu li a {
+    color: gray;
+}
+
+    /* Libreria */
+
+.library {
+    margin: 20px;
+}
+
+.library h1 {
+    color: white;
+    font-size: 22px;
+    margin: 20px 5px;
+}
+
+.library > .label {
+    color: gray;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+
+.library section {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.card {
+    text-align: center;
+    padding: 5px;
+    max-width: 250px;
+    min-width: 100px;
+    flex-basis: calc(100% / 2);
+}
+
+.card img {
+    width:100%;
+}
+
+.card.artist img {
+    border-radius: 50%;
+}
+
+.card h2 {
+    font-size: 14px;
+    color: white;
+    margin: 10px 0;
+}
+
+.card .label {
+    color: gray;
+    font-size: 12px;
+}
+
+/* Parte inferiore -- Player */
 footer {
     background-color: #282828;
     position: fixed;
@@ -429,6 +502,9 @@ footer {
         width: calc(100% - 200px);
     }
 
+    .card {
+        flex-basis: calc(100% / 4);
+    }
 }
 
 /* LG -- Large devices -- From 992 */
@@ -561,4 +637,11 @@ footer {
         width: calc(100% - 200px);
     }
 
+    .card {
+        flex-basis: calc(100% / 6);
+    }
+
+    .recent > .card {
+        margin-right:auto;
+    }
 }
