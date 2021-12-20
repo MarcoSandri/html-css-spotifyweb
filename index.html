@@ -15,30 +15,56 @@
         
     <main>
         <aside>
-            <div class="logo">
-                <!-- Logo visible in Extra small layout -->
-                <img src="img/logo-small.svg" class="logo-xs" alt="Small logo">
+            <div class="sidebar-top">
+                <div class="logo">
+                    <!-- Logo visible in Extra small layout -->
+                    <img src="img/logo-small.svg" class="logo-xs" alt="Small logo">
+                    
+                    <!-- Logo grande visibile negli altri layout -->
+                    <img src="img/logo.svg" class="logo-big" alt="Big Logo">
+                </div>
+        
+                <nav>
+                    <ul>
+                        <li><a href="#" class="sidebar-btn"><img src="img/home.svg" alt="Home icon"> <span class="label">Home</span></a></li>
+                        <li><a href="#" class="sidebar-btn"><img src="img/search.svg" alt="Search icon"> <span class="label">Cerca</span></a></li>
+                        <li><a href="#" class="sidebar-btn"><img src="img/libreria.svg" alt="Library icon"> <span class="label">La tua libreria</span></a></li>
+                    </ul>
+                </nav>
+                                
+                <div class="playlist">
+                    <h2>PLAYLIST</h2>
+                    <a href="#" id="add-playlist"><div id="add-icon">+</div><span>Crea Playlist</span></a>
+                    <ul>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                        <li>Nome Playlist</li>
+                    </ul>
+                </div>
             </div>
-    
-            <nav>
-                <ul>
-                    <li><a href="#" class="sidebar-btn"><img src="img/home.svg" alt="Home icon"></a></li>
-                    <li><a href="#" class="sidebar-btn"><img src="img/search.svg" alt="Search icon"></a></li>
-                    <li><a href="#" class="sidebar-btn"><img src="img/libreria.svg" alt="Library icon"></a></li>
-                </ul>
-            </nav>
-    
-            <div class="playlist">
-    
+            
+
+            <div class="sidebar-bottom">
+                
+                <div class="account">
+                    <a href="#" class="install-btn"><img src="img/download.svg" alt="Download icon"> <span class="label">Installa app</span></a>
+                    <div class="profile">
+                        <img src="img/profile.svg" alt="Profile icon">
+                        <span class="label">John Doe</span>
+                    </div>
+                </div>
             </div>
-    
         </aside>
 
         <div class="content">
             <div class="cta">
                 <a href="#" class="cta-btn">EFFETTUA L'UPGRADE</a>
             </div>
-            
+
         </div>
         
     </main>

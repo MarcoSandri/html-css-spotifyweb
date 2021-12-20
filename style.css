@@ -32,22 +32,107 @@ main {
     flex-direction: row;
 }
 
-/* Barra a sinistra */
+
+
+
+
+
+
+
+/* SIDEBAR */
+
 aside {
     background-color: #000;
     width: 50px;
 }
 
-.sidebar-btn {
-    padding: 5px 10px;
+.sidebar-top {
+    height: calc(100% - 75px);
+    min-height: 300px;
 }
+
+.sidebar-bottom {
+    background-color: black;
+    height: 75px;
+}
+
+/* Logo */
 
 .logo-xs {
     padding: 5px 10px;
 }
 
-/* Libreria album */
+.logo-big {
+    display: none;
+}
 
+/* Comandi sidebar */
+.sidebar-btn {
+    color: gray;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 0;
+}
+
+.sidebar-btn img {
+    width: 25px;
+}
+
+.sidebar-btn .label {
+    display: none;
+}
+
+/* Playlist Sidebar */
+
+.playlist {
+    display: none;
+}
+
+/* Account Sidebar */
+
+.account {
+    height: 75px;
+}
+
+.install-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.install-btn img {
+    width: 15px;
+}
+
+.install-btn .label {
+    display: none;
+}
+
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.profile img {
+    width: 25px;
+    height: 25px;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+.profile .label {
+    display:none;
+}
+
+
+
+
+/* LIBRERIA ALBUM */
 .content {
     width: calc(100% - 50px);
     background-color: #141922;
@@ -90,28 +175,205 @@ footer {
 /* S -- Small devices -- From 567 to 767 */
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
-    
+
+    /* SIDEBAR */
+
     aside {
-        background-color: #000;
+        width: 200px;
+    }
+
+    /* Logo */
+
+    .logo-xs {
+        display: none;
+    }
+    
+    .logo-big {
+        display: block;
+        padding: 20px 20px;
         width: 150px;
     }
 
-    .content {
-        width: calc(100% - 150px);
+    /* Comandi sidebar */
+    .sidebar-btn {
+        justify-content: flex-start;
+        padding-left: 20px;
     }
+
+    .sidebar-btn .label {
+        display: inline;
+        margin-left: 5px;
+    }
+
+    /* Playlist sidebar */
+
+    .playlist {
+        color:gray;
+        display: block;
+        padding: 15px 20px;
+    }
+
+    .playlist h2 {
+        color: #fff;
+        font-size: 14px;
+    }
+    
+    #add-playlist {
+        margin: 10px 0;
+        color: gray;
+        display: flex;
+        align-items: center;
+    }
+
+    #add-playlist span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #add-icon {
+        display: inline-block;
+        color: black;
+        background-color: gray;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .playlist ul {
+        background-color: red;
+        overflow-y: auto;
+    }
+
+    /* Account Sidebar */
+
+    .account {
+        margin: 0 20px;
+    }
+
+    .install-btn {
+        justify-content: flex-start;
+        padding: 5px 0;
+        border-bottom: 1px solid gray;
+    }
+
+    .install-btn img {
+        width: 15px;
+    }
+
+    .install-btn .label {
+        display: inline;
+        color: gray;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .profile {
+        justify-content: flex-start;
+    }
+
+    .profile .label {
+        display: inline;
+        color: white;
+        font-size: 14px;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+    /* Libreria */
+
+    .content {
+        width: calc(100% - 200px);
+    }
+
 }
 
 /* MD -- Medium devices -- From 768 to 991 */
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+    
+    /* SIDEBAR */
 
     aside {
-        background-color: #000;
+        width: 200px;
+    }
+
+    /* Logo */
+
+    .logo-xs {
+        display: none;
+    }
+    
+    .logo-big {
+        display: block;
+        padding: 20px 20px;
         width: 150px;
     }
 
+    /* Comandi sidebar */
+    .sidebar-btn {
+        justify-content: flex-start;
+        padding-left: 20px;
+    }
+
+    .sidebar-btn .label {
+        display: inline;
+        margin-left: 5px;
+    }
+
+    /* Playlist sidebar */
+
+    .playlist {
+        display: block;
+        padding: 15px 20px;
+    }
+
+    .playlist h2 {
+        color: #fff;
+        font-size: 14px;
+    }
+
+    /* Account Sidebar */
+
+    .account {
+        margin: 0 20px;
+    }
+
+    .install-btn {
+        justify-content: flex-start;
+        padding: 5px 0;
+        border-bottom: 1px solid gray;
+    }
+
+    .install-btn img {
+        width: 15px;
+    }
+
+    .install-btn .label {
+        display: inline;
+        color: gray;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .profile {
+        justify-content: flex-start;
+    }
+
+    .profile .label {
+        display: inline;
+        color: white;
+        font-size: 14px;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+    /* Libreria */
+
     .content {
-        width: calc(100% - 150px);
+        width: calc(100% - 200px);
     }
 
 }
@@ -119,13 +381,88 @@ footer {
 /* LG -- Large devices -- From 992 */
 
 @media screen and (min-width: 992px) {
-    
+       
+    /* SIDEBAR */
+
     aside {
-        background-color: #000;
+        width: 200px;
+    }
+
+    /* Logo */
+
+    .logo-xs {
+        display: none;
+    }
+    
+    .logo-big {
+        display: block;
+        padding: 20px 20px;
         width: 150px;
     }
 
-    .content {
-        width: calc(100% - 150px);
+    /* Comandi sidebar */
+    .sidebar-btn {
+        justify-content: flex-start;
+        padding-left: 20px;
     }
+
+    .sidebar-btn .label {
+        display: inline;
+        margin-left: 5px;
+    }
+
+    /* Playlist sidebar */
+
+    .playlist {
+        display: block;
+        padding: 15px 20px;
+    }
+
+    .playlist h2 {
+        color: #fff;
+        font-size: 14px;
+    }
+
+
+    /* Account Sidebar */
+
+    .account {
+        margin: 0 20px;
+    }
+
+    .install-btn {
+        justify-content: flex-start;
+        padding: 5px 0;
+        border-bottom: 1px solid gray;
+    }
+
+    .install-btn img {
+        width: 15px;
+    }
+
+    .install-btn .label {
+        display: inline;
+        color: gray;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+
+    .profile {
+        justify-content: flex-start;
+    }
+
+    .profile .label {
+        display: inline;
+        color: white;
+        font-size: 14px;
+        margin-left: 5px;
+        font-weight: bold;
+    }
+
+    /* Libreria */
+
+    .content {
+        width: calc(100% - 200px);
+    }
+
 }
