@@ -309,6 +309,14 @@ footer {
         width: 200px;
     }
 
+    .sidebar-top {
+        height: 170px;
+    }
+
+    .playlist-title {
+        height: 80px;
+    }
+
     /* Logo */
 
     .logo-xs {
@@ -334,13 +342,49 @@ footer {
 
     /* Playlist sidebar */
 
-    .playlist {
+    .playlist-title,
+    .playlist-list {
+        color:gray;
         display: block;
         padding: 15px 20px;
     }
 
-    .playlist h2 {
+    .playlist-title h2 {
         color: #fff;
+        font-size: 14px;
+    }
+    
+    #add-playlist {
+        margin: 10px 0;
+        color: gray;
+        display: flex;
+        align-items: center;
+    }
+
+    #add-playlist span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #add-icon {
+        display: inline-block;
+        color: black;
+        background-color: gray;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .playlist-list {
+        overflow-y: auto;
+        height: calc(100% - 80px - 170px - 75px);
+    }
+
+    .playlist-list li {
+        margin-bottom: 14px;
         font-size: 14px;
     }
 
@@ -397,6 +441,14 @@ footer {
         width: 200px;
     }
 
+    .sidebar-top {
+        height: 170px;
+    }
+
+    .playlist-title {
+        height: 80px;
+    }
+
     /* Logo */
 
     .logo-xs {
@@ -422,16 +474,51 @@ footer {
 
     /* Playlist sidebar */
 
-    .playlist {
+    .playlist-title,
+    .playlist-list {
+        color:gray;
         display: block;
         padding: 15px 20px;
     }
 
-    .playlist h2 {
+    .playlist-title h2 {
         color: #fff;
         font-size: 14px;
     }
+    
+    #add-playlist {
+        margin: 10px 0;
+        color: gray;
+        display: flex;
+        align-items: center;
+    }
 
+    #add-playlist span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #add-icon {
+        display: inline-block;
+        color: black;
+        background-color: gray;
+        height: 30px;
+        width: 30px;
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+        margin-right: 5px;
+    }
+
+    .playlist-list {
+        overflow-y: auto;
+        height: calc(100% - 80px - 170px - 75px);
+    }
+
+    .playlist-list li {
+        margin-bottom: 14px;
+        font-size: 14px;
+    }
 
     /* Account Sidebar */
 
