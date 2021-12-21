@@ -235,10 +235,98 @@ footer {
     left: 0;
     right: 0;
     height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
 }
 
+.current {
+    display: flex;
+    align-items: center;
+    gap:15px;
+}
 
+.current img {
+    height: 50px;
+}
 
+.current .song,
+.current .actions {
+    color:gray;
+}
+
+.current .song h2 {
+    font-size: 16px;
+    color:white;
+}
+
+.current .song .label {
+    font-size: 12px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.player .controls i {
+    color:white;
+    margin: 0  10px;
+    font-size: 14px;
+}
+
+.player .controls .fa-play-circle {
+    font-size: 24px;
+}
+
+.progression {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    width: 30vw;
+}
+
+.progression .bar {
+    margin: 0 10px;
+    height: 3px;
+    width: 80%;
+    background-color: white;
+    border-radius: 50px;
+}
+
+.progression .time {
+    color:white;
+    font-size: 12px;
+}
+
+.volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.volume i {
+    color: white;
+    margin: 0 5px;
+}
+
+.volume .bar {
+    display: inline-block;
+    height: 3px;
+    width: 100px;
+    border-radius: 50px;
+    background-color: white;
+}
 
 /* S -- Small devices -- From 567 to 767 */
 
@@ -505,6 +593,11 @@ footer {
     .card {
         flex-basis: calc(100% / 4);
     }
+
+
+    .actions {
+        flex-direction: row;
+    }
 }
 
 /* LG -- Large devices -- From 992 */
@@ -643,5 +736,9 @@ footer {
 
     .recent > .card {
         margin-right:auto;
+    }
+
+    .actions {
+        flex-direction: row;
     }
 }
