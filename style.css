@@ -78,6 +78,8 @@ aside {
     display: none;
 }
 
+
+
 /* Playlist Sidebar */
 
 .playlist-title,
@@ -159,6 +161,7 @@ aside {
     /* Menu della libreria */
 .library-menu {
     font-size: 14px;
+    text-align: center;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -171,6 +174,18 @@ aside {
 
 .library-menu li a {
     color: gray;
+    position: relative;
+}
+
+.active::after {
+    content: "";
+    width: 40px;
+    background-color:#9EFF52;
+    height: 2px;
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%, 2px);
 }
 
     /* Libreria */
@@ -391,12 +406,17 @@ footer {
     /* Comandi sidebar */
     .sidebar-btn {
         justify-content: flex-start;
-        padding-left: 20px;
+        padding-left: 18px;
+        border-left: 2px solid transparent
     }
 
     .sidebar-btn .label {
         display: inline;
         margin-left: 5px;
+    }
+
+    .selected {
+        border-left: 2px solid #9EFF52
     }
 
     /* Playlist sidebar */
@@ -523,12 +543,17 @@ footer {
     /* Comandi sidebar */
     .sidebar-btn {
         justify-content: flex-start;
-        padding-left: 20px;
+        padding-left: 18px;
+        border-left: 2px solid transparent
     }
 
     .sidebar-btn .label {
         display: inline;
         margin-left: 5px;
+    }
+
+    .selected {
+        border-left: 2px solid #9EFF52
     }
 
     /* Playlist sidebar */
@@ -663,12 +688,17 @@ footer {
     /* Comandi sidebar */
     .sidebar-btn {
         justify-content: flex-start;
-        padding-left: 20px;
+        padding-left: 18px;
+        border-left: 2px solid transparent
     }
 
     .sidebar-btn .label {
         display: inline;
         margin-left: 5px;
+    }
+
+    .selected {
+        border-left: 2px solid #9EFF52
     }
 
     /* Playlist sidebar */
