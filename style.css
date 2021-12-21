@@ -296,13 +296,29 @@ footer {
     width: 30vw;
 }
 
+.duration {
+    width:80%;
+    position: relative; 
+    margin: 0 10px; 
+}
+
 .progression .bar {
-    margin: 0 10px;
     height: 3px;
-    width: 80%;
-    background-color: white;
+    width: 100%;
+    background-color: gray;
     border-radius: 50px;
 }
+
+.progression .progress {
+    height: 3px;
+    width: 60%;
+    background-color: white;
+    border-radius: 50px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+
 
 .progression .time {
     color:white;
@@ -320,12 +336,26 @@ footer {
     margin: 0 5px;
 }
 
+.volume .selector {
+    position:relative;
+    display: flex;
+
+}
+
 .volume .bar {
     display: inline-block;
     height: 3px;
     width: 100px;
     border-radius: 50px;
+    background-color: gray;
+}
+
+.volume .tone {
+    height: 3px;
+    width: 60%;
     background-color: white;
+    border-radius: 50px;
+    position: absolute;
 }
 
 /* S -- Small devices -- From 567 to 767 */
