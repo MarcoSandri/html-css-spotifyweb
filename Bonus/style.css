@@ -279,7 +279,7 @@ aside {
 }
 
 
-/*            2.2.LIBRERIA 
+/*            2.3.LIBRERIA 
    Libreria canzoni, artisti e playlis */
 
 .library-songs {
@@ -294,7 +294,7 @@ aside {
     flex-wrap: wrap;
 }
 
-/* 2.2.1 - Card canzone */
+/* 2.3.1 - Card canzone */
 .card {
     text-align: center;
     padding-right: 5px;
@@ -322,13 +322,13 @@ aside {
     align-items: center;
 }
 
-/* 2.2.2 - Artisti */
+/* 2.3.2 - Artisti */
 
 .artist {
     border-radius: 999px;
 }
 
-/* 2.2.3 - Overlay che compare con hover */
+/* 2.3.3 - Overlay che compare con hover */
 .cover:hover .overlay{
     cursor: pointer;
     display: flex;
@@ -656,10 +656,10 @@ footer {
     }
     
 
-    /*             4.2.LIBRERIA 
+    /*             4.4.LIBRERIA 
         Cambia la visualizzazione delle card */
 
-    /* 4.2.1 - Card */
+    /* 4.4.1 - Card */
 
     .card {
         flex-basis: calc(100% / 6);
