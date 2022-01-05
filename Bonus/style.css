@@ -4,6 +4,7 @@
     1.SIDEBAR
     2.LIBRERIA
     3.PLAYER
+    4.MEDIA QUERIES
 */
 
 
@@ -15,6 +16,7 @@
     --sidebar-xs: 50px; /* Misura sidebar nel layout xs */
     --sidebar: 220px; /* Misura sidebar negli altri layout */
     --player: 90px; /* Misura player */
+    --gray: #a3a3a3 /* Colore principale testo*/
 }
 
 /*==========
@@ -46,12 +48,46 @@ a {
     display: block;
 }
 
+
+h1 {
+    color: #fff;
+    font-size: 22px;
+}
+
+h2 {
+    color: #fff;
+    font-size: 16px;
+}
+
 .label {
-    color: #7d7f84;
+    color: var(--gray);
 }
 
 .hide-xs {
     display: none; /* Testo non visualizzato nel layout xs */
+}
+
+.bar {
+    height: 5px;
+    background-color: #5a5a5a;
+    border-radius: 50px;
+    position: relative;
+}
+
+.dot {
+    content: "";
+    display: none;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    transform: translate(50%, -5px);
+}
+
+.bar:hover .dot {
+    display: block;
 }
 
 /*=========
@@ -61,6 +97,7 @@ a {
 aside {
     width: var(--sidebar-xs);
     background-color: #000000;
+    overflow: hidden; /* Se il player si sovrappone alla sidebar */
 }
 
 
@@ -69,12 +106,16 @@ aside {
 
 .sidebar-top {
     height: calc(100% - 70px);
+    min-height: 305px;
+    display: flex;
+    flex-direction: column;
 }
+
 
 /* 1.1.1 - Logo */
 
-.logo {
-    padding: 5px 10px;
+.logo-xs {
+    margin: 5px 10px;
 }
 
 .logo-big {
@@ -103,28 +144,52 @@ aside {
     display: none; /* Playlist non visualizzate nel layout xs */
 }
 
+
+/* 1.1.4 - Elementi hover */
+
+.sidebar-btn:hover .label {
+    color: #fff;
+}
+
+.playlist .playlist-add:hover {
+    color: #fff;
+}
+
+.playlist .playlist-add:hover::before {
+    background-color: #fff;
+}
+
+.list li a:hover {
+    color: #fff;
+}
+
 /*       1.2.SIDEBAR-BOTTOM 
    parte inferiore della sidebar */
 
 .sidebar-bottom {
     height: 70px;
     text-align: center;
+    overflow: hidden;
 }
 
 /* 1.2.1 - Bottone Download */
 
 .download {
-    margin: 5px 0;
+    padding: 4px 0;
 }
 
 .download img {
     width: 18px;
 }
 
+.download:hover .label{
+    color: #fff;
+}
+
 /* 1.2.2 - Profilo */
 
 .account {
-    padding-top: 5px;
+    padding-top: 10px;
 }
 
 .account img {
@@ -141,6 +206,137 @@ aside {
 .library {
     width: calc(100% - var(--sidebar-xs));
     background-color: #141922;
+    overflow-y: auto;
+}
+
+
+/*       2.1.CALL TO ACTION 
+   Banner superiore della libreria */
+
+.cta {
+    height: var(--player);
+    background-color: rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px 15px;
+}
+
+.cta-btn {
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    height: min-content;
+    color: #fff;
+    padding: 10px 30px;
+    border: 1px solid #fff;
+    border-radius: 999px;
+}
+
+.cta-btn:hover {
+    transform: scale(1.1);
+}
+
+
+/*  2.2.MENU LIBRERIA 
+   Menu della libreria */
+
+.library-menu {
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.library-menu li {
+    padding: 2px 10px;
+    margin: 8px 0;
+}
+
+.library-menu li a {
+    color: var(--gray);
+    position: relative;
+}
+
+
+/* 2.2.1 - Menu selezionato */
+
+#active::after {
+    content: "";
+    width: 40px;
+    background-color:#9EFF52;
+    height: 2px;
+    position: absolute;
+    bottom:0;
+    left: 50%;
+    transform: translate(-50%, 2px);
+}
+
+/* 2.2.2 - Testo cambia colore con hover*/
+.library-menu li a:hover {
+    color: #fff;
+}
+
+
+/*            2.2.LIBRERIA 
+   Libreria canzoni, artisti e playlis */
+
+.library-songs {
+    margin-left: 20px;
+}
+
+.library-songs section {
+    margin: 20px 0; /* Margini sopra e sotto ogni sezione */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/* 2.2.1 - Card canzone */
+.card {
+    text-align: center;
+    padding-right: 5px;
+    max-width: 250px;
+    min-width: 100px;
+    flex-basis: calc(100% / 2); /* Nei layout piccoli solo due card a riga */
+}
+
+.cover {
+    position: relative;
+    overflow: hidden;
+}
+
+.cover img {
+    width: 100%;
+    display: block;
+}
+
+.overlay {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2.2.2 - Artisti */
+
+.artist {
+    border-radius: 999px;
+}
+
+/* 2.2.3 - Overlay che compare con hover */
+.cover:hover .overlay{
+    cursor: pointer;
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 /*========
@@ -148,6 +344,327 @@ aside {
   ========*/
 
 footer {
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
     height: var(--player);
     background-color: #282828;
+    display: flex;
+    justify-content: space-between;
 }
+
+/*           3.1.CURRENT-SONG 
+   Informazioni sulla canzone corrente */
+
+.current-song {
+    width: 15%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: var(--sidebar);
+    min-width: 200px;
+}
+
+/* 3.1.1 - Cover */
+.current-song img {
+    width: 40px;
+}
+
+/* 3.1.2 - Titolo e artista */
+.current-song .song-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3.1.3 - Azioni */
+.current-song .song-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+}
+
+/* 3.1.4 - Elementi Hover */
+
+.song-info .label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.song-actions .label:hover {
+    color: #fff;
+}
+
+/*                   3.2.SONG-PLAYER 
+   Comandi sulla riproduzione e barra di riproduzione */
+
+.song-player {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 3.2.1 Player-actions */
+
+.player-actions {
+    align-self: center;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.fa-play-circle {
+    font-size: 1.5em;
+}
+
+.action-btn {
+    margin: 8px;
+}
+
+/* 3.2.2 Player-status */
+
+.player-status {
+    display: flex;
+    align-items: center;
+}
+
+.time {
+    color: #fff;
+    width: 20%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.time-bar {
+    width: 80%;
+}
+
+.actual-time {
+    position: absolute;
+    left: 0;
+    width: 30%;
+    background-color: #c1c1c1;
+
+}
+
+/* 3.2.3 Elementi Hover */
+.fa-play-circle:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.bar:hover .actual-time {
+    background-color: #9EFF52;
+}
+
+/*      3.3.VOLUME
+   Comandi del volume */
+
+.volume {
+    width: 25%;
+    max-width: var(--sidebar);
+    min-width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.volume a{
+    color: #fff;
+    font-size: 16px;
+}
+
+.volume-bar {
+    width: 50%;
+}
+
+.actual-volume {
+    position: absolute;
+    left: 0;
+    width: 25%;
+    background-color: #c1c1c1;
+}
+
+/* 3.3.1 Elementi Hover */
+
+.bar:hover .actual-volume {
+    background-color: #9EFF52;
+}
+
+
+/*===============
+  4.MEDIA QUERIES 
+  ===============*/
+  
+  @media screen and (min-width: 567px) {
+    
+    /*                4.1.SIDEBAR-LARGE 
+       sidebar vista negli schermi più grandi di 566px */
+    
+    /* 4.1.1 - Misure sidebar diverse e elementi generali*/
+
+    aside {
+        width: var(--sidebar);
+    }
+
+    .library {
+        width: calc(100% - var(--sidebar));
+    }
+
+    .hide-xs {
+        display: inline; /* Testo visualizzato nei layout più grandi */
+    }
+
+    /* 4.1.2 - Logo */
+
+    .logo-xs {
+        display: none; /* Logo piccolo non visualizzato nei layout più grandi */
+    }
+
+    .logo-big {
+        display: block;
+        width: 130px;
+        margin: 0 15px;
+        padding: 15px 0;
+    }
+
+    /* 4.1.3 - Sidebar menu */
+
+    .sidebar-menu {
+        align-items: flex-start;
+    }
+
+    .sidebar-btn {
+        padding: 0 12px;
+        display: flex;
+        align-items: center;
+        border-left: 3px solid transparent;
+    }
+
+    .sidebar-btn img {
+        margin-right: 6px;
+    }
+
+    #selected {
+        border-left: 3px solid #adff2f;
+    }
+
+    #selected .label {
+        color: #fff;
+    }
+
+    /* 4.1.4 - Playlist */
+
+    .playlist {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+        margin-top: 20px;
+        overflow: hidden
+    }
+
+    .playlist a {
+        color: var(--gray);
+    }
+
+    .list {
+        overflow: auto;
+    }
+
+    .playlist-add::before { /* Icona di crea playlist */
+        content: "+";
+        font-size: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: 500;
+        display: inline-block;
+        color: black;
+        background-color: var(--gray);
+        height: 30px;
+        width: 30px;
+        margin-right: 6px;
+    }
+
+    .playlist-add {
+        color: var(--gray);
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .playlist .list li {
+        margin-bottom: 15px;
+    }
+
+    /* 4.1.5 - Parte inferiore */
+
+    .sidebar-bottom {
+        text-align: left;
+        margin: 0 15px;
+    }
+
+    .download {
+        border-bottom: 1px solid var(--gray);
+    }
+
+    .download a {
+        display: flex;
+        align-items: center;
+    }
+
+    .download img,
+    .account img {
+        margin-right: 6px;
+    }
+
+    .account {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+    /*             4.2.LIBRERIA 
+        Cambia la visualizzazione delle card */
+
+    /* 4.2.1 - Card */
+
+    .card {
+        flex-basis: calc(100% / 4);
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+
+
+    /*           4.3.CURRENT-SONG 
+        Informazioni sulla canzone corrente */
+
+    /* 4.3.1 - Azioni sulla canzone corrente */
+
+    .current-song .song-actions {
+        display: flex;
+        flex-direction: row; /* Negli schermi più grandi le azioni sono affiancate */
+    }
+    
+
+    /*             4.2.LIBRERIA 
+        Cambia la visualizzazione delle card */
+
+    /* 4.2.1 - Card */
+
+    .card {
+        flex-basis: calc(100% / 6);
+    }
+}
+
+
+
